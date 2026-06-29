@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catálogo de partes — Nexolibre | Repuestos MRI/CT</title>
+<meta name="description" content="Catálogo de piezas y repuestos MRI/CT recuperados y testeados: bobinas, gradientes, RF, fuentes e inyectores. Buscá por marca, modelo o número de parte." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav" id="nav">
+    <a href="index.html" class="brand">
+      <img class="logo-mark" src="assets/nexolibre-mark.svg" alt="Nexolibre" width="40" height="22" />
+      <span class="brand-name">nexolibre<small data-en="part of Grupo Nexo" data-es="parte de Grupo Nexo" data-pt="parte do Grupo Nexo">parte de Grupo Nexo</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" data-en="Home" data-es="Inicio" data-pt="Início">Inicio</a>
+      <a href="empresa.html" data-en="Company" data-es="Empresa" data-pt="Empresa">Empresa</a>
+      <a href="servicios.html" data-en="Services" data-es="Servicios" data-pt="Serviços">Servicios</a>
+      <a href="productos.html" class="active" data-en="Products" data-es="Productos" data-pt="Produtos">Productos</a>
+      <a href="software.html" class="nav-soft" data-en="Software" data-es="Software" data-pt="Software">Software</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" id="lang">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button><button data-lang="pt">PT</button>
+      </div>
+      <a href="contacto.html" class="btn btn-primary nav-cta"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span data-en="Contact" data-es="Contacto" data-pt="Contato">Contacto</span></a>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ SUBHERO ============ -->
+<section class="subhero" style="padding-bottom:18px">
+  <div class="glow" style="width:520px;height:520px;background:rgba(241,144,0,.20);top:-180px;left:50%;transform:translateX(-50%)"></div>
+  <div class="wrap">
+    <div class="eyebrow reveal" style="justify-content:center" data-en="Parts catalog" data-es="Catálogo de partes" data-pt="Catálogo de peças">Catálogo de partes</div>
+    <h1 class="reveal" data-en="Recovered &amp; tested MRI/CT parts" data-es="Repuestos MRI/CT recuperados y testeados" data-pt="Peças MRI/CT recuperadas e testadas">Repuestos MRI/CT recuperados y testeados</h1>
+    <p class="lead reveal" style="max-width:58ch" data-en="Search by brand, equipment model or part number. Every part is recovered and bench-tested in our laboratories."
+       data-es="Buscá por marca, modelo de equipo o número de parte. Cada pieza es recuperada y testeada en nuestros laboratorios." data-pt="Busque por marca, modelo de equipamento ou número de peça. Cada peça é recuperada e testada em nossos laboratórios.">Buscá por marca, modelo de equipo o número de parte. Cada pieza es recuperada y testeada en nuestros laboratorios.</p>
+  </div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="products" style="padding-top:14px">
+  <div class="wrap">
+    <div class="cat-tools reveal">
+      <div class="cat-search"><input id="catSearch" type="search" data-en-ph="Search part, model or part number…" data-es-ph="Buscar pieza, modelo o N° de parte…" data-pt-ph="Buscar peça, modelo ou nº de peça…" placeholder="Buscar pieza, modelo o N° de parte…" /></div>
+      <select id="fCat" aria-label="Categoría"></select>
+      <select id="fMod" aria-label="Modalidad"></select>
+      <select id="fMarca" aria-label="Marca"></select>
+      <select id="fLoc" aria-label="Ubicación"></select>
+    </div>
+    <div class="cat-count" id="catCount"></div>
+    <div class="cat-grid" id="catGrid"></div>
+    <div class="cat-pager" id="catPager"></div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="split" style="padding-top:24px">
+  <div class="wrap">
+    <div class="ctaband reveal">
+      <div class="cta-inner">
+        <div>
+          <h3 data-en="Didn't find your part?" data-es="¿No encontraste tu pieza?" data-pt="Não encontrou a sua peça?">¿No encontraste tu pieza?</h3>
+          <p data-en="Our stock rotates constantly. Tell us the model and the part number and we'll check across our labs in AR, CL and the USA." data-es="Nuestro stock rota constantemente. Decinos el modelo y el número de parte y lo buscamos en nuestros laboratorios de AR, CL y USA." data-pt="Nosso estoque gira constantemente. Diga o modelo e o número da peça e procuramos nos nossos laboratórios de AR, CL e EUA.">Nuestro stock rota constantemente. Decinos el modelo y el número de parte y lo buscamos en nuestros laboratorios de AR, CL y USA.</p>
+        </div>
+        <a href="contacto.html" class="btn btn-primary" data-en="Contact us" data-es="Contactanos" data-pt="Fale conosco">Contactanos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html"><img class="foot-logo" src="assets/gruponexo.svg" alt="Grupo Nexo" /></a>
+        <p data-en="Multivendor medical engineering for diagnostic imaging. Support, equipment, parts and AI software." data-es="Ingeniería médica multimarca para diagnóstico por imágenes. Soporte, equipos, piezas y software con IA." data-pt="Engenharia médica multimarca para diagnóstico por imagem. Suporte, equipamentos, peças e software com IA.">Ingeniería médica multimarca para diagnóstico por imágenes. Soporte, equipos, piezas y software con IA.</p>
+      </div>
+      <div class="foot-col">
+        <h5 data-en="Services" data-es="Servicios" data-pt="Serviços">Servicios</h5>
+        <a href="servicios.html#argentina">Argentina</a>
+        <a href="servicios.html#chile">Chile</a>
+        <a href="servicios.html#usa">USA</a>
+        <a href="software.html" data-en="AI software" data-es="Software con IA" data-pt="Software com IA">Software con IA</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-en="Company" data-es="Empresa" data-pt="Empresa">Empresa</h5>
+        <a href="empresa.html" data-en="About us" data-es="Quiénes somos" data-pt="Quem somos">Quiénes somos</a>
+        <a href="productos.html" data-en="Products &amp; stock" data-es="Productos y stock" data-pt="Produtos e estoque">Productos y stock</a>
+        <a href="catalogo.html" data-en="Parts catalog" data-es="Catálogo de partes" data-pt="Catálogo de peças">Catálogo de partes</a>
+        <a href="contacto.html" data-en="Contact" data-es="Contacto" data-pt="Contato">Contacto</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-en="Contact" data-es="Contacto" data-pt="Contato">Contacto</h5>
+        <a href="contacto.html" data-en="AR · CL · USA" data-es="AR · CL · USA">AR · CL · USA</a>
+        <a href="mailto:contacto@nexolibre.com">contacto@nexolibre.com</a>
+        <a href="https://wa.me/5491167410993" target="_blank" rel="noopener">+54 9 11 6741-0993</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="holding" data-en="© 2026 Nexolibre — part of <b>Grupo Nexo</b>. All rights reserved." data-es="© 2026 Nexolibre — parte de <b>Grupo Nexo</b>. Todos los derechos reservados." data-pt="© 2026 Nexolibre — parte do <b>Grupo Nexo</b>. Todos os direitos reservados.">© 2026 Nexolibre — parte de <b>Grupo Nexo</b>. Todos los derechos reservados.</div>
+      <div data-en="MRI · CT · Multivendor · AR · CL · USA" data-es="MRI · CT · Multimarca · AR · CL · USA" data-pt="MRI · CT · Multimarca · AR · CL · USA">MRI · CT · Multimarca · AR · CL · USA</div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Archivos del sistema / macOS
+.DS_Store
+*.DS_Store
+
+# Configuración local de Claude Code (no es parte del sitio)
+.claude/
+
+# Documentos internos de negocio (no van al repo público)
+*.xlsx
+*.xlsm
+
+# Copias de respaldo
+Copia de *
+*~
+*.bak
