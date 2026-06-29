@@ -362,3 +362,13 @@
   @media(max-width:560px){.lb-prev{left:8px}.lb-next{right:8px}}
   @media(max-width:960px){.cat-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:640px){.cat-grid{grid-template-columns:1fr}.cat-tools select{flex:1}}
+
+/* ---------- FAQ (acordeón, SEO/GEO) ---------- */
+.faq{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq details{background:var(--surface);border:1px solid var(--border-2);border-radius:14px;padding:0 22px;transition:border-color .2s}
+.faq details[open]{border-color:var(--accent)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:17px;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--accent);font-size:26px;font-weight:400;line-height:1;flex:0 0 auto}
+.faq details[open] summary::after{content:'\2013'}
+.faq p{margin:0 0 18px;color:var(--muted);line-height:1.65}

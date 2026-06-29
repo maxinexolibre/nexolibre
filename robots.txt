@@ -1,0 +1,24 @@
+# Nexolibre — robots.txt
+# Buscadores tradicionales y de IA bienvenidos (GEO).
+User-agent: *
+Allow: /
+
+# Crawlers de IA explícitamente permitidos (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://nexolibre.com/sitemap.xml

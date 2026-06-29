@@ -36,8 +36,9 @@
     const tt=t();
     const imgs=imgsOf(p);
     const imgsAttr = imgs.length ? " data-imgs=\""+esc(JSON.stringify(imgs))+"\"" : "";
+    const alt = esc([p.marca,p.nombre,p.categoria,p.modalidad].filter(Boolean).join(' '));
     const mainHtml = imgs.length
-      ? '<img src="'+esc(imgs[0])+'" alt="'+esc(p.nombre)+'" onerror="this.parentNode.innerHTML=catPh()">'
+      ? '<img src="'+esc(imgs[0])+'" alt="'+alt+'" loading="lazy" decoding="async" onerror="this.parentNode.innerHTML=catPh()">'
       : catPh();
     const thumbs = imgs.length>1
       ? '<div class="part-thumbs">'+imgs.map((u,i)=>'<button type="button" class="pthumb'+(i===0?' active':'')+'" data-img="'+esc(u)+'"><img src="'+esc(u)+'" alt=""></button>').join('')+'</div>'
@@ -153,5 +154,34 @@
     const a=t().all;
     fillSelect(fCat,'categoria',a[0]);fillSelect(fMod,'modalidad',a[1]);fillSelect(fMarca,'marca',a[2]);fillSelect(fLoc,'ubicacion',a[3]);
     render();
+    injectSeo(parts);
   }).catch(()=>{grid.innerHTML='<div class="cat-empty">'+t().err+'</div>';});
+
+  // Datos estructurados (SEO/GEO): catálogo como ItemList de Product
+  function injectSeo(list){
+    try{
+      var BASE='https://nexolibre.com';
+      var items=list.slice(0,100).map(function(p,i){
+        var imgs=imgsOf(p).map(function(u){return /^https?:/.test(u)?u:BASE+'/'+u;});
+        var avail=/stock/i.test(p.disponibilidad||'')?'InStock':(/pedido|order/i.test(p.disponibilidad||'')?'PreOrder':'LimitedAvailability');
+        var prod={
+          '@type':'Product',
+          name:[p.marca,p.nombre].filter(Boolean).join(' '),
+          sku:p.ref||undefined,
+          mpn:(p.nro_parte&&p.nro_parte!=='-')?p.nro_parte:undefined,
+          brand:p.marca?{'@type':'Brand',name:p.marca}:undefined,
+          category:[p.categoria,p.modalidad].filter(Boolean).join(' / ')||undefined,
+          description:p.descripcion||undefined,
+          image:imgs.length?imgs:undefined,
+          itemCondition:/usad|used|recond|recuper/i.test(p.estado||'')?'https://schema.org/UsedCondition':'https://schema.org/RefurbishedCondition',
+          offers:{'@type':'Offer',availability:'https://schema.org/'+avail,priceCurrency:'USD',seller:{'@id':BASE+'/#organization'},
+                  url:BASE+'/contacto.html?parte='+encodeURIComponent(p.ref||p.nombre||'')}
+        };
+        Object.keys(prod).forEach(function(k){if(prod[k]===undefined)delete prod[k];});
+        return {'@type':'ListItem',position:i+1,item:prod};
+      });
+      var ld={'@context':'https://schema.org','@type':'ItemList',name:'Catálogo de repuestos MRI/CT — Nexolibre',numberOfItems:list.length,itemListElement:items};
+      var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+    }catch(e){}
+  }
 })();
