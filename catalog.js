@@ -148,7 +148,7 @@
     const a=t().all; fillSelect(fCat,'categoria',a[0]);fillSelect(fMod,'modalidad',a[1]);fillSelect(fMarca,'marca',a[2]);fillSelect(fLoc,'ubicacion',a[3]); render();
   },0)));
 
-  fetch('parts.json').then(r=>r.json()).then(data=>{
+  fetch('parts.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(data=>{
     parts=Array.isArray(data)?data:[];
     const a=t().all;
     fillSelect(fCat,'categoria',a[0]);fillSelect(fMod,'modalidad',a[1]);fillSelect(fMarca,'marca',a[2]);fillSelect(fLoc,'ubicacion',a[3]);
