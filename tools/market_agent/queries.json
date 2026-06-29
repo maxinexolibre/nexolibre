@@ -1,0 +1,35 @@
+{
+  "_comentario": "Configuración de búsqueda del agente de oportunidades. Editá las listas a gusto. El agente combina cada 'marca_modelo' con cada 'tipo_pieza' y también corre las 'busquedas_extra' tal cual.",
+
+  "marketplace": "EBAY_US",
+  "max_resultados_por_busqueda": 25,
+  "moneda_destino": "USD",
+
+  "marcas_modelos": [
+    "GE Signa", "GE Profile", "GE Optima", "GE Discovery",
+    "Siemens Magnetom", "Siemens Symphony", "Siemens Avanto",
+    "Philips Achieva", "Philips Ingenia", "Philips Intera",
+    "Toshiba Vantage", "Canon Vantage", "Hitachi Airis", "Hitachi Oasis"
+  ],
+
+  "tipos_pieza": [
+    "MRI coil", "MRI head coil", "MRI knee coil", "MRI spine coil",
+    "MRI body coil", "MRI surface coil", "MRI gradient", "RF amplifier MRI",
+    "CT injector", "MRI power supply"
+  ],
+
+  "busquedas_extra": [
+    "MRI coil for parts",
+    "MRI gradient coil assembly",
+    "medical imaging coil lot"
+  ],
+
+  "condiciones_ebay": ["USED", "SELLER_REFURBISHED", "FOR_PARTS_OR_NOT_WORKING"],
+
+  "excluir_si_titulo_contiene": [
+    "manual", "brochure", "poster", "t-shirt", "sticker", "toy", "model kit",
+    "service guide", "book", "magnet souvenir"
+  ],
+
+  "precio_min_usd": 50
+}

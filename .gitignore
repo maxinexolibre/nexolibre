@@ -13,3 +13,6 @@
 Copia de *
 *~
 *.bak
+
+# Resultados del agente de oportunidades (no publicar)
+tools/market_agent/out/
